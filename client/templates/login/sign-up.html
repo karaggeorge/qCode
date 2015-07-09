@@ -1,0 +1,45 @@
+<template name="signUp">
+	<h2> QCode! </h2>
+	<h3> Sign Up! </h3>
+	<h4> Enter your information to continue: </h4>
+	<h6 id="message"> * fields are required </h6>
+    {{#if errorMessages}}
+      <div class="list-errors">
+        {{#each errorMessages}}
+          <div class="alert alert-danger" role="alert"> {{this}} </div>
+        {{/each}}
+      </div>
+    {{/if}}
+    <form>
+	  <div class="input-group signup-group">
+	    <span class="input-group-addon">* First Name</span>
+	    <input type="text" class="form-control" placeholder="John" id="first">
+	  </div>
+	  <div class="input-group signup-group">
+	    <span class="input-group-addon">* Last Name</span>
+	    <input type="text" class="form-control" placeholder="Doe" id="last">
+	  </div>
+	  <div class="input-group signup-group">
+	    <span class="input-group-addon">* Email</span>
+	    <input type="email" class="form-control" placeholder="john.doe@example.com" id="email">
+	  </div>
+	  <div class="input-group signup-group">
+	    <span class="input-group-addon">* Username</span>
+	    <input type="text" class="form-control" placeholder="Username" id="username">
+	  </div>
+	  <div class="input-group signup-group">
+	    <span class="input-group-addon">* Password</span>
+	    <input type="password" class="form-control" placeholder="Password" id="password">
+	  </div>
+	  <div class="input-group signup-group">
+	    <span class="input-group-addon">* Repeat Password</span>
+	    <input type="password" class="form-control" placeholder="Repeat Password" id="rpassword">
+	  </div>
+	  
+
+      <div id="login-button-row">
+        <button type="submit" id="login-button">Sign Up</button>
+        <a href="{{pathFor 'login'}}" class="float-right">Already have an account?</a>
+      </div>
+    </form>
+</template>

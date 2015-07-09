@@ -1,0 +1,54 @@
+<template name="main">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-offset-1 col-xs-10">
+				<div class="jumbotron">
+					<h1> Upload your file </h1>
+					<div class="row">
+						<div class="col-xs-offset-1 col-xs-4">
+							<input type="file" class="codeInput">							
+						</div>
+						<div class="col-xs-offset-1 col-xs-4">
+							<button class="check"> Run Code </button>
+						</div>
+					</div>
+					<div class="panel panel-default panel-results">
+					  <div class="panel-heading">
+					    <h3 class="panel-title">Results:</h3>
+					  </div>
+					  <div class="panel-body">
+					    <p class="output"> {{output}} </p>
+					  </div>
+					  <div class="panel-footer">Time: {{time}}s   Memory: {{memory}}KB</div>
+					</div>
+					{{#if correct}}
+						<div class="alert alert-success" role="alert"> Correct! </div>
+					{{else}}
+						{{#if incorrect}}
+							<div class="alert alert-danger" role="alert"> Incorrect! </div>
+						{{/if}}
+					{{/if}}
+				</div>
+				
+				<div class="jumbotron">
+					<h1> Upload your input test </h1>
+					<div class="row">
+						<div class="col-xs-offset-1 col-xs-4">
+							<input type="file" class="inInput">							
+						</div>
+					</div>
+				</div>
+				
+				<div class="jumbotron">
+					<h1> Upload your output test </h1>
+					<div class="row">
+						<div class="col-xs-offset-1 col-xs-4">
+							<input type="file" class="outInput">							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</template>

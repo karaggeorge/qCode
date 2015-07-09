@@ -1,0 +1,36 @@
+<template name="competitionsNormal">
+		<div class="conatiner-fluid">
+			<div class="row">
+				<div class="col-xs-offset-1 col-xs-10">
+					<h3> My Competitions </h3>
+					
+					<div class="panel panel-primary">
+					  	<div class="panel-heading">
+					   		 <h3 class="panel-title">Competitions</h3>
+					  	</div>
+					  	<div class="panel-body">
+					   		 Select a competition to compete:
+					  	</div>
+					  	<ul class="list-group">
+							{{#each myCompetitions}}
+								{{> competitionNormal}}
+							{{/each}}
+						</ul>
+						{{#if anySelected}}
+						<div class="panel-footer">
+								<button type="button" class="btn btn-default js-compete" {{disabled}}>Compete</button>
+								{{#if ended}}
+									<button type="button" class="btn btn-primary js-compete">View Results</button>
+								{{/if}}
+						</div>
+						{{/if}}
+					</div>
+					
+				</div>
+			</div>
+		</div>
+</template>
+
+<template name="competitionNormal">
+	<li class="list-group-item {{selected}}">{{name}} {{#if hasEnded}}<img src="/img/glyphicons-207-ok-2.png" class="myIcon float-right">{{else}}{{#if hasStarted}} <span class="float-right">{{timeRemain}} <img src="/img/glyphicons-56-stopwatch.png" class="myIcon"></span>{{/if}}{{/if}}</li>
+</template>

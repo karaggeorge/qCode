@@ -1,0 +1,28 @@
+<template name="login">
+	<h2> QCode! </h2>
+	<h4> Enter your credentials to continue: </h4>
+    {{#if errorMessages}}
+      <div class="list-errors">
+        {{#each errorMessages}}
+          <div class="alert alert-danger" role="alert"> {{this}} </div>
+        {{/each}}
+      </div>
+    {{/if}}
+    <form>
+      <div class="login-field">
+        <!-- <span class="glyphicon glyphicon-envelope loginIcon" aria-hidden="true"></span> -->
+        <input type="text" name="email" id="username" placeholder="Email or Username">
+      </div> <!-- End username login-field -->
+
+      <div class="login-field">
+        <!-- <span class="glyphicon glyphicon-lock loginIcon" aria-hidden="true"></span> -->
+        <input type="password" name="password" id="password" placeholder="Password">
+      </div> <!-- End password login-field -->
+
+      <div id="login-button-row">
+        <button type="submit" id="login-button">Log In</button>
+        <a href="{{pathFor 'signUp'}}" class="float-right">Don't have an account?</a>
+		<div id="move-up"> <a href="{{pathFor 'forgotPassword'}}" class="float-right">Forgot Password?</a> </div>
+      </div>
+    </form>
+</template>

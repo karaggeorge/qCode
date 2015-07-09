@@ -1,0 +1,209 @@
+@font-face{
+    font-family:'Glyphicons Halflings';
+    src:url('/fonts/glyphicons-halflings-regular.eot');
+    src:url('/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/glyphicons-halflings-regular.woff') format('woff'),
+    url('/fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+    url('/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+.glyphicon {
+   font-family:'Glyphicons Halflings' !important;
+}
+
+.js-logout {
+	margin-left: 100px;
+}
+
+.icon.icon-ok{
+	background-image: url('/img/glyphicons-207-ok-2.png');
+}
+
+.myIcon {
+	margin-left: 10px;
+	width: 18px;
+}
+
+.panel-results{
+	margin-top: 10px;
+}
+
+.login .mainHolder{
+	background-color: white;
+	margin-bottom: 4px;
+	padding-bottom: 10px;
+}
+
+.login .mainBox{
+	margin-top: 5%;
+	margin-bottom: 40%;
+}
+
+#message{
+	margin-left: 5%;
+	color:red;
+	margin-bottom: 20px;
+}
+
+.login a{
+	text-decoration: none;
+	color: black;
+}
+
+.login h2{
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.login h3{
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+#lock-icon{
+	height: 10px;
+}
+
+.login {
+/*	background-image: url("/img/back.png");*/
+	background-color: #CBE86B;
+	background-repeat: repeat;
+}
+
+.login-field{
+	border: 1px solid silver;
+	border-radius: 5px;
+	background-color: white;
+	box-shadow: inset 2px 2px 2px 0px silver;
+	height: 3em;
+	width: 100%;
+/*	margin: auto;*/
+	margin-top: 5%;
+	margin-left: 0;
+}
+
+.login-field input{
+	border: 0px;
+	background-color: white;
+	padding: 1%;
+	width: 95%;
+	margin: 1%;
+	position: relative;
+}
+
+.loginIcon {
+	font-size: 2em;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;  
+	margin: 5px;
+}
+
+#move-up {
+	position: relative;
+	top: -20px;
+}
+
+#login-button-row{
+	width: 95%;
+/*	margin: auto;*/
+/*	margin-left:5%;*/
+	margin-top: 7.5%;
+	margin-bottom: 7.5%;
+}
+
+#login-button-row a{
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal; 
+	text-decoration: none;
+	color: black;
+}
+
+#login-button{
+/*	background-color: #9CD2F0;*/
+	background-color: black;
+	border-radius: 5px;
+	padding: 10px 30px 10px 30px;
+	color: white;
+}
+
+.float-right{
+	float: right;
+}
+
+.align-center{
+	margin-top: 5px;
+}
+
+.green {
+	color: #BDD964;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+.signup-group {
+	margin-bottom: 10px;
+}
+
+.signup-group .input-group-addon{
+/*	padding-right: 20px;*/
+/*	width: 100px;*/
+}
+
+/* END LOGIN */
+
+#timer {
+	width: 4.35em;
+}
+
+.navbar-welcome {
+	width: 150px;
+	margin-top: 15px;
+}
+
+.list-group-item.selected {
+	background-color: #F2E9E1;
+/*	background-color: #CBE86B;*/
+}
+
+#codeFile {
+	margin-top: 10px;
+}
+
+.list-group-item.selectedProb {
+	background-color: #F2E9E1;
+	border-bottom: none;
+/*	background-color: #CBE86B;*/
+}
+
+.list-group-item.selectedCase {
+	background-color: #CBE86B;
+	border-bottom: none;
+/*	background-color: #CBE86B;*/
+}
+
+.createNewBody {
+	margin-bottom: 20px;
+}
+
+.header {
+	margin-bottom: 25px;
+}
+
+.underline {
+	padding-bottom: 5px;
+	border-bottom: 1px solid;
+}
+
+.js-save {
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+.js-cancel {
+	margin-top: 10px;
+	margin-bottom: 15px;
+}

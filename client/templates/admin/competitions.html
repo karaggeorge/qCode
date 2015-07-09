@@ -1,0 +1,112 @@
+<template name="competitionsAdmin">
+		<div class="conatiner-fluid">
+			<div class="row">
+				<div class="col-xs-offset-1 col-xs-10">
+					<h3> My Competitions </h3>
+					
+					<div class="panel panel-primary">
+					  	<div class="panel-heading">
+					   		 <h3 class="panel-title">Competitions</h3>
+					  	</div>
+					  	<div class="panel-body">
+					   		 Select a competition to edit or manage:
+							 <button type="button" class="btn btn-default js-add float-right" data-toggle="modal" data-target="#createNew">Create New</button>
+					  	</div>
+					  	<ul class="list-group">
+							{{#each competitions}}
+								{{> competition}}
+							{{/each}}
+						</ul>
+						{{#if anySelected}}
+						<div class="panel-footer">
+							<button type="button" class="btn btn-warning js-edit">Edit</button>
+							<button type="button" class="btn btn-danger js-delete">Delete</button>
+							<div class="float-right">
+								{{#if compStarted}}
+									<!-- <input type="text" id="timer" value="{{getTime}}" disabled> -->
+								{{/if}}
+								<button type="button" class="btn btn-info js-invite">Invite</button>
+								{{#if compStarted}}
+										<button type="button" class="btn btn-warning js-stop">Stop</button>
+								{{else}}
+										<button type="button" class="btn btn-success" data-toggle="modal" data-target="#startComp" {{disabled}}>Start</button>
+								{{/if}}
+							</div>
+						</div>
+						{{/if}}
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<div class="modal fade" id="createNew" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">Create New Competition</h4>
+		      </div>
+		      <div class="modal-body createNewBody">
+			      <!-- {{#if errorMessages}}
+			        <div class="list-errors">
+			          {{#each errorMessages}}
+			            <div class="alert alert-danger" role="alert"> {{this}} </div>
+			          {{/each}}
+			        </div>
+			      {{/if}} -->
+			  	<form class="form-horizontal">
+					<div class="form-group">
+					    <label for="compName" class="col-sm-2 control-label">Name</label>
+					    <div class="col-sm-10">
+					      <input type="text" class="form-control" id="compName" placeholder="My Cool Competition">
+					    </div>
+					</div>
+				</form>
+		      </div>
+
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+		        <button type="button" class="btn btn-primary js-add">Create</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		
+		<div class="modal fade" id="startComp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">Start the Competition</h4>
+		      </div>
+		      <div class="modal-body createNewBody">
+			  	<form class="form-horizontal">
+					<form class="form-inline">
+						<div class="form-group">
+						<label for="compName" class="col-sm-2 control-label">Duration</label>
+					    <div class="col-sm-10">
+						<div class="input-group">
+						  <input type="text" class="form-control" id="hours" placeholder="2">
+						  <div class="input-group-addon"> Hours</div>
+						</div>
+						</div>
+						</div>
+					</form>
+				</form>
+		      </div>
+
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+		        <button type="button" class="btn btn-primary js-start">Start</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		
+		
+</template>
+
+<template name="competition">
+	<li class="list-group-item {{selected}}">{{name}} {{#if hasEnded}}<img src="/img/glyphicons-207-ok-2.png" class="myIcon float-right">{{else}}{{#if hasStarted}} <span class="float-right">{{timeRemain}} <img src="/img/glyphicons-56-stopwatch.png" class="myIcon"></span>{{/if}}{{/if}}</li>
+</template>

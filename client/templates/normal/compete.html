@@ -1,0 +1,105 @@
+<template name="compete">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-offset-1 col-xs-10">
+				<div class="row">
+				<div class="col-xs-10">
+					<h3 class="header"> {{name}}: </h3>
+				</div>
+				<div class="col-xs-2">
+					<h3 class="header"> {{time}} </h3>					
+				</div>
+				</div>
+				{{#if notEnded}}
+				<div class="panel panel-primary">
+				  	<div class="panel-heading">
+				   		 <h3 class="panel-title">Submit</h3>
+				  	</div>
+				  	<div class="panel-body">
+						<div class="col-xs-2"> <h4 class="float-right"> Problem: </h4> </div>
+				   		 <div class="col-xs-3">
+							 <select class="form-control" id="probId">
+								 <option value="">  </option>
+								 {{#each probs}}
+									 {{> prob}}
+								 {{/each}}
+							</select>
+						</div>
+						<div class="col-xs-12">
+					    {{#if errorMessages}}
+					      <div class="list-errors">
+					        {{#each errorMessages}}
+					          <div class="alert alert-danger" role="alert"> {{this}} </div>
+					        {{/each}}
+					      </div>
+					    {{/if}}
+						</div>
+						<div class="col-xs-12">
+							<div class="col-xs-1"> <h4 class="float-right"> Submit: </h4> </div>
+					   		 <div class="col-xs-3">
+								 <input type="file" id="codeFile">
+							</div>
+							<div class="col-xs-1"> <h5 class="float-right"> Language: </h5> </div>
+							<div class="col-xs-3">
+								<select class="form-control" id="language">
+									{{#each languages}}
+										{{> lang}}
+									{{/each}}
+								</select>
+							</div>
+							<div class="col-xs-2">
+								<button class="btn btn-default js-submit"> Submit </button>
+							</div>
+
+							<div class='col-xs-12'>
+						  	<h5> Prompt: </h5>
+							<pre> {{prompt}} </pre>
+						</div>
+					</div>
+				  	</div>
+				</div>
+				{{/if}}
+				<div class="panel panel-primary">
+				  	<div class="panel-heading">
+				   		 <h3 class="panel-title">Submissions:</h3>
+				  	</div>
+				  	<div class="panel-body">
+
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th> Submission ID </th>
+									<th> Problem </th>
+									<th> Status </th>
+									<th> Result </th>
+								</tr>
+							</thead>
+							<tbody>
+								{{#each submissions}}
+									{{>subm}}
+								{{/each}}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="prob">
+	<option value="{{name}}"> {{name}} </option>
+</template>
+
+<template name="lang">
+	<option value="{{num}}"> {{name}} </option>
+</template>
+
+<template name="subm">
+	<tr class="{{color}}">
+		<td> {{_id}} </td>
+		<td> {{problem}} </td>
+		<td> {{status}} </td>
+		<td> {{result}} </td>
+	</tr>
+</template>

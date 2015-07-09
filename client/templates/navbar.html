@@ -1,0 +1,19 @@
+<template name="navbar">
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav">
+				<li><p class="navbar-text">Welcome, {{username}}</p></li>
+				{{#if isAdmin}}
+				<li class="{{active 'comp'}}"><a href="{{pathFor 'competitions-admin'}}">My Competitions</a></li>
+				<li class="{{disabled}} {{active 'edit'}}" id="editTab"><a href="">Edit</a></li>
+				<li class="{{disabled}} {{active 'invite'}}" id="inviteTab"><a href="">Invite</a></li>
+				<li class="{{disabledObserve}} {{active 'observe'}}" id="observeTab"><a href="">Observe</a></li>
+				{{else}}
+					<li class="{{active 'comp'}}"><a href="{{pathFor 'competitions-normal'}}">My Competitions</a></li>
+					<li class="{{disabledComp}} {{active 'compete'}}" id="competeTab"><a href="">Compete</a></li>
+				{{/if}}
+				<li class="float-right"><button class="btn btn-default navbar-btn js-logout"> Log Out </button></li>
+			</ul>
+		</div>
+	</nav>
+</template>
